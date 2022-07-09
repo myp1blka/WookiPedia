@@ -2,7 +2,7 @@
 .topZone {
     display: flex;
     flex-wrap: wrap;
-    justify-content: middle;
+    justify-content: left;
     margin-top: 50px;
 }
 
