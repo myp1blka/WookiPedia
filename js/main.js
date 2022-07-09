@@ -8,37 +8,25 @@ let playField2 =  parseInt( elField2.value );
 let chooseYouPlanet =  parseInt( elChoosePlanet.value );
 
 
-
+// ##############################################################
 const DrawPlanets = (result) => {
     let planetParams = "";
     for (var key in result.data) {
         planetParams += `<p>${key}:   ${result.data[key]} </p>`;
-        console.log("key: " + key + " значение: " + result.data[key] );
+        //console.log("key: " + key + " значение: " + result.data[key] );
     }
     elField2.innerHTML = "";
     elField2.insertAdjacentHTML('beforeend', planetParams);
 }
-
-
-
-
-
-
-
-
-
+// ##############################################################
 const GetOverHere = async () => {
     elField2.innerHTML = "";
     elField2.innerHTML = ' Loading...  <img src="./img/loading.gif"> ';
     chooseYouPlanet =  parseInt( elChoosePlanet.value );
     const resultPlanetObj = await axios.get('https://swapi.dev/api/planets/' + chooseYouPlanet + '/');
-    console.log (resultPlanetObj.data);
+    //console.log (resultPlanetObj.data);
     DrawPlanets(resultPlanetObj);
-    // elField2.innerHTML = JSON.stringify(resultPlanetObj.data);
-
 }
 
-
-
-
+// ##############################################################
 elChoosePlanet.addEventListener('change', () => {GetOverHere()});
