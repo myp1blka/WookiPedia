@@ -22,11 +22,16 @@ const DrawPlanets = (result) => {
 
 // ##############################################################
 const GetOverHere = async (chooseYouPlanet) => {
+    if (chooseYouPlanet != "" && chooseYouPlanet > 0){
     elField2.innerHTML = "";
     elField2.innerHTML = ' Loading...  <img src="./img/loading.gif"> ';
     const resultPlanetObj = await axios.get('https://swapi.dev/api/planets/' + chooseYouPlanet + '/');
     //console.log (resultPlanetObj.data);
     DrawPlanets(resultPlanetObj);
+    }
+    else {
+        elField2.innerHTML = " Пленету не обрано ";
+    }
 }
 
 // ##############################################################
