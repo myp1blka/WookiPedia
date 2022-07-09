@@ -19,7 +19,7 @@ let chooseYouPlanet =  parseInt( elChoosePlanet.value );
 
 
 const GetOverHere = async () => {
-    elField2.innerHTML = '';
+    elField2.innerHTML = ' Loading...  <img src="./img/loading.gif"> ';
     chooseYouPlanet =  parseInt( elChoosePlanet.value );
     const result = await axios.get('https://swapi.dev/api/planets/' + chooseYouPlanet + '/');
     console.log (result.data);
