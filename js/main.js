@@ -12,6 +12,7 @@ let chooseYouPlanet =  parseInt( elChoosePlanet.value );
 // ##############################################################
 const DrawPlanets = (result) => {
     let planetParams = ""; // очистити накопичувальну HTML змінну
+    elField2.innerHTML = "";
     for (var key in result.data) { // перелічити всі параметри в об'єкті та їх значення
         planetParams += `<p>${key}:   ${result.data[key]} </p>`; // форматуємо виводимі дані
     }
